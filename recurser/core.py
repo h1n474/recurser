@@ -2,10 +2,11 @@ import pathlib
 import itertools
 from functools import partial
 from concurrent.futures import ThreadPoolExecutor
+from abc import ABC, abstractclassmethod
 from rich.progress import track
 
 
-class Recurser:
+class Recurser(ABC):
     def __init__(self, path='.', recursive=True, resolve=True):
         self.path = path
         self.recursive = recursive
@@ -48,9 +49,9 @@ class Recurser:
             self.items = (i for i in self._all() if i.is_dir() and i.stem in dirname)
             return self
 
+    @abstractclassmethod
     def func(self, path):
-        # Recurserに対して再帰的に処理をしたい時クラスをオーバーライド
-        # 引数にpathは必須
+        # exec, multi_execで実行する関数
         pass
 
     def print(self):
