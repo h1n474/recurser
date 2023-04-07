@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "recurser"
+version = "0.1.0"
+description = "find recursive file or dir and execute function."
+authors = ["hinata <you@example.com>"]
+license = "mit"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+rich = "^13.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
