@@ -35,8 +35,8 @@ class Recurser(ABC):
             self.items = (i for i in self._all() if i.is_file())
             return self
         else:
-            lower = ['.' + i.lower() for i in extname]
-            upper = ['.' + i.upper() for i in extname]
+            lower = [i.lower() for i in extname]
+            upper = [i.upper() for i in extname]
             extname = lower + upper
             self.items = (i for i in self._all() if i.is_file() and i.suffix in extname)
             return self
