@@ -7,7 +7,7 @@ license = "mit"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.1"
 rich = "^12"
 
 
